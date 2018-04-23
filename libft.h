@@ -6,7 +6,7 @@
 /*   By: cbrill <cbrill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 17:04:39 by cbrill            #+#    #+#             */
-/*   Updated: 2018/04/21 20:44:43 by cbrill           ###   ########.fr       */
+/*   Updated: 2018/04/22 18:37:34 by cbrill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,13 @@ char	*ft_strnew(size_t size);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_stroverlap(const char *s1, const char *s2);
 char	*ft_strrchr(const char *str, int c);
+int		ft_wordlen(char const *str, char c);
+int		ft_wordcount(char const *str, char c);
+char	**ft_strsplit(char const *str, char c);
 char	*ft_strstr(const char *haystack, const char *needle);
 char	*ft_strsub(char const *str, unsigned int start, size_t len);
 char	*ft_strtrim(char const *str);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 
-#endif /* LIBFT */
+#endif
