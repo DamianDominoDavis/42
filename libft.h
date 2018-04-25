@@ -6,7 +6,7 @@
 /*   By: cbrill <cbrill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 17:04:39 by cbrill            #+#    #+#             */
-/*   Updated: 2018/04/22 18:37:34 by cbrill           ###   ########.fr       */
+/*   Updated: 2018/04/24 14:56:05 by cbrill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_islower(int c);
 int		ft_isprint(int c);
+int		ft_isspace(int c);
 int		ft_isupper(int c);
 char	*ft_itoa(int n);
 void	*ft_memalloc(size_t size);
@@ -51,22 +52,24 @@ char	*ft_strcpy(char *dst, const char *src);
 void	ft_strdel(char **str);
 char	*ft_strdup(const char *str);
 int		ft_strequ(char const *s1, char const *s2);
-void	ft_striter(char *str, void (*f)(char *));
-void	ft_striteri(char *str, void (*f)(unsigned int i, char *));
+void	ft_striter(char *str, void (*f)(char*));
+void	ft_striteri(char *str, void (*f)(unsigned int, char*));
 char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *str);
+char	*ft_strmap(char const *str, char (*f)(char));
+char * ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strncat(char *dst, const char *src, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strncpy(char *dst, const char *src, size_t len);
+char	*ft_strndup(const char *str, size_t n);
 int		ft_strnequ(char const *s1, char const *s2, size_t n);
 char	*ft_strnew(size_t size);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_stroverlap(const char *s1, const char *s2);
 char	*ft_strrchr(const char *str, int c);
-int		ft_wordlen(char const *str, char c);
-int		ft_wordcount(char const *str, char c);
-char	**ft_strsplit(char const *str, char c);
+int		ft_wordcount(char const *str, char delim);
+char	**ft_strsplit(char const *str, char delim);
 char	*ft_strstr(const char *haystack, const char *needle);
 char	*ft_strsub(char const *str, unsigned int start, size_t len);
 char	*ft_strtrim(char const *str);

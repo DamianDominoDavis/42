@@ -6,7 +6,7 @@
 /*   By: cbrill <cbrill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 14:32:06 by cbrill            #+#    #+#             */
-/*   Updated: 2018/04/21 16:55:23 by cbrill           ###   ########.fr       */
+/*   Updated: 2018/04/24 15:01:10 by cbrill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,27 @@
 
 int		ft_atoi(const char *str)
 {
-	int		n;
-	int		sign;
+	long	out;
+	long	sign;
+	long	max = 9223372036854775807;
+	long	min = -9223372036854775808;
 
-	n = 0;
-	while (*str != '\0' && (
-		*str == ' '
-		|| *str == '\n'
-		|| *str == '\t'
-		|| *str == '\v'
-		|| *str == '\f'
-		|| *str == '\r'))
-		str++;
+	out = 0;
 	sign = 1;
-	if (*str == '+' || *str == '-')
-		if (*str++ == '-')
-			sign = -1;
-	while (*str >= '0' && *str <= '9')
-		n = n * 10 + *str++ - '0';
-	return (sign * n);
+	while (ft_isspace(*str))
+		str++;
+	if (*str == '-' || *str == '+')
+		sign = (*str++ == '-') ? -1 : 1;
+	if (*str == '\0')
+		return ((int)(sign * 0));
+	while (*str && *str >= '0' && *str <= '9')
+	{
+		if (max/10 < out)
+			return (sign == -1) ? (int)min : (int)max;
+		out *= 10;
+		if (max - (*str - '0') < out)
+			return (sign == -1) ? (int)min : (int)max;
+		out += *str++ - '0';
+	}
+	return ((int)(out * sign));
 }

@@ -6,25 +6,25 @@
 /*   By: cbrill <cbrill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/21 16:14:22 by cbrill            #+#    #+#             */
-/*   Updated: 2018/04/21 16:24:37 by cbrill           ###   ########.fr       */
+/*   Updated: 2018/04/24 14:19:53 by cbrill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *str, void (*f)(unsigned int i, char *))
+void	ft_striteri(char *str, void (*f)(unsigned int, char*))
 {
 	int lim;
-	int k;
+	int i;
 
 	if (str)
 	{
-		k = 0;
+		i = 0;
 		lim = ft_strlen(str);
-		while (k < lim)
+		while (i < lim)
 		{
-			(*f)(k, &str[k]);
-			k++;
+			(*f)(i, &str[i]);
+			i++;
 		}
 	}
 }

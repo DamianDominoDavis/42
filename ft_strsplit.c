@@ -6,69 +6,51 @@
 /*   By: cbrill <cbrill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/22 16:51:26 by cbrill            #+#    #+#             */
-/*   Updated: 2018/04/22 18:14:17 by cbrill           ###   ########.fr       */
+/*   Updated: 2018/04/24 13:23:19 by cbrill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_wordlen(char const *str, char c)
-{
-	int		i;
-
-	i = 0;
-	while (*str == c)
-		str++;
-	while (*str != c && *str != '\0')
-	{
-		str++;
-		i++;
-	}
-	return (i);
-}
-
-int		ft_wordcount(char const *str, char c)
+int		ft_wordcount(char const *str, char delim)
 {
 	int		i;
 
 	i = 0;
 	while (*str)
 	{
-		while (*str == c)
+		while (*str == delim)
 			str++;
-		if (*str != c && *str != '\0')
+		if (*str != '\0')
 			i++;
-		while (*str != c && *str != '\0')
+		while (*str && *str != delim)
 			str++;
 	}
 	return (i);
 }
 
-char	**ft_strsplit(char const *str, char c)
+char	**ft_strsplit(char const *str, char delim)
 {
 	char	**out;
 	int		oi;
-	int		si;
-	int		wi;
+	int		i;
+	int		start;
 
-	if (!str)
-		return (NULL);
-	out = (char**)malloc(sizeof(*out) * (ft_wordcount(str, c) + 1));
-	if (!out)
+	if (!str || !
+		(out = (char**)malloc(sizeof(char*) * (ft_wordcount(str, delim)) + 1)))
 		return (NULL);
 	oi = 0;
-	si = 0;
-	while (oi < ft_wordcount(str, c))
+	i = 0;
+	while (str[i])
 	{
-		wi = 0;
-		if (!(out[oi] = ft_strnew(ft_wordlen(&str[si], c) + 1)))
-			out[oi] = NULL;
-		while (str[si] == c)
-			si++;
-		while (str[si] != c && str[si])
-			out[oi][wi++] = str[si++];
-		out[oi++][wi] = '\0';
+		while (str[i] == delim)
+			i++;
+		start = i;
+		while (str[i] && str[i] != delim)
+			i++;
+		if (i > start)
+			out[oi++] = ft_strndup(str + start, i - start);
 	}
-	out[oi] = 0;
+	out[oi] = NULL;
 	return (out);
 }
