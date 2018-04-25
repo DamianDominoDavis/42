@@ -17,7 +17,7 @@ char	*ft_strmap(char const *str, char (*f)(char))
 	char				*out;
 	unsigned int		i;
 
-	if(!str || !(out = ft_strnew(ft_strlen(str))))
+	if (!str || !(out = ft_strnew(ft_strlen(str))))
 		return (NULL);
 	i = 0;
 	while (str[i] != '\0')

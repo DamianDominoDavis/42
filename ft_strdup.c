@@ -14,5 +14,5 @@
 
 char	*ft_strdup(const char *str)
 {
-	return ft_strndup(str, ft_strlen(str));
+	return (ft_strndup(str, ft_strlen(str)));
 }

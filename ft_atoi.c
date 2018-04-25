@@ -20,8 +20,6 @@ int		ft_atoi(const char *str)
 {
 	long	out;
 	long	sign;
-	long	max = 9223372036854775807;
-	long	min = -9223372036854775808;
 
 	out = 0;
 	sign = 1;
@@ -32,13 +30,6 @@ int		ft_atoi(const char *str)
 	if (*str == '\0')
 		return ((int)(sign * 0));
 	while (*str && *str >= '0' && *str <= '9')
-	{
-		if (max/10 < out)
-			return (sign == -1) ? (int)min : (int)max;
-		out *= 10;
-		if (max - (*str - '0') < out)
-			return (sign == -1) ? (int)min : (int)max;
-		out += *str++ - '0';
-	}
+		out = out * 10 + *str++ - '0';
 	return ((int)(out * sign));
 }
