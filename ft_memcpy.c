@@ -6,7 +6,7 @@
 /*   By: cbrill <cbrill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 14:38:09 by cbrill            #+#    #+#             */
-/*   Updated: 2018/04/19 13:03:50 by cbrill           ###   ########.fr       */
+/*   Updated: 2018/05/03 11:35:26 by cbrill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	s = (unsigned char*)src;
 	while (n--)
 		*d++ = *s++;
-	return ((unsigned char*)dst);
+	return (dst);
 }

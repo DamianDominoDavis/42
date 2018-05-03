@@ -6,7 +6,7 @@
 /*   By: cbrill <cbrill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 17:04:39 by cbrill            #+#    #+#             */
-/*   Updated: 2018/05/01 18:56:54 by cbrill           ###   ########.fr       */
+/*   Updated: 2018/05/03 11:16:45 by cbrill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ void				ft_putstr_fd(char *str, int fd);
 void				ft_putendl_fd(char *str, int fd);
 void				ft_putnbr_fd(int n, int fd);
 
+t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));

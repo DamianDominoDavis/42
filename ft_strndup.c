@@ -6,7 +6,7 @@
 /*   By: cbrill <cbrill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/24 13:07:10 by cbrill            #+#    #+#             */
-/*   Updated: 2018/04/24 13:13:04 by cbrill           ###   ########.fr       */
+/*   Updated: 2018/05/03 11:16:44 by cbrill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,5 @@ char	*ft_strndup(const char *str, size_t n)
 	if (!out)
 		return (NULL);
 	out = ft_strncpy(out, str, n);
-	out[n] = '\0';
 	return (out);
 }
