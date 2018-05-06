@@ -6,7 +6,7 @@
 /*   By: cbrill <cbrill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 17:04:39 by cbrill            #+#    #+#             */
-/*   Updated: 2018/05/03 11:16:45 by cbrill           ###   ########.fr       */
+/*   Updated: 2018/05/06 11:23:56 by cbrill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,8 @@ char				*ft_strndup(const char *str, size_t n);
 int					ft_stroverlap(const char *s1, const char *s2);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
+int					ft_countch(const char* str, const unsigned char ch);
+char				*ft_stripch(const char* str, unsigned int n, const unsigned char ch);
+char				*ft_stripnl(const char* str);
 
 #endif
