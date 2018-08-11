@@ -6,7 +6,7 @@
 /*   By: cbrill <cbrill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 17:04:39 by cbrill            #+#    #+#             */
-/*   Updated: 2018/05/06 11:23:56 by cbrill           ###   ########.fr       */
+/*   Updated: 2018/08/10 19:39:25 by cbrill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include "get_next_line.h"
 
 typedef struct		s_list
 {
@@ -23,6 +24,8 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+int					get_next_line(const int fd, char **line);
 
 void				*ft_memset(void *p, int c, size_t len);
 void				ft_bzero(void *str, size_t n);
