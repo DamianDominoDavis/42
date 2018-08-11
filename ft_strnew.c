@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
 char	*ft_strnew(size_t size)
 {
 	char	*out;
 
-	out = ((char*)ft_memalloc(size + 1));
+	out = (char*)ft_memalloc(size + 1);
 	if (!out)
 		return (NULL);
 	out[size] = '\0';
