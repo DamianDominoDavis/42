@@ -6,7 +6,7 @@
 /*   By: cbrill <cbrill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 17:04:39 by cbrill            #+#    #+#             */
-/*   Updated: 2018/09/13 14:29:18 by cbrill           ###   ########.fr       */
+/*   Updated: 2018/09/14 22:57:22 by cbrill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct		s_list
 }					t_list;
 
 int					ft_atoi(const char *str);
+int					ft_atoib(char *str, int base);
 void				ft_bzero(void *str, size_t n);
 int					ft_countch(const char *str, const unsigned char ch);
 int					ft_getnbr(char *str, int *error);
@@ -59,6 +60,7 @@ void				ft_putendl_fd(char *str, int fd);
 void				ft_putnbr(int n);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putnbrputstr(char *str);
+void				ft_putstr(char *str);
 void				ft_putstr_fd(char *str, int fd);
 char				*ft_strcat(char *dst, const char *src);
 char				*ft_strchr(const char *str, int c);
@@ -97,7 +99,7 @@ char				*ft_strsub(char const *str, unsigned int start, size_t len);
 char				*ft_strtrim(char const *str);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
-int					ft_wordcount(char const *str, char delim);
+unsigned int		ft_wordcount(char const *str, char delim);
 int					get_next_line(const int fd, char **line);
 
 #endif
